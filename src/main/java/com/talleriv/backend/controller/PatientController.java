@@ -1,7 +1,7 @@
 package com.talleriv.backend.controller;
 
 import com.talleriv.backend.models.Patient;
-import com.talleriv.backend.repository.PatientRepository;
+import com.talleriv.backend.service.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,36 +13,35 @@ import java.util.Optional;
 public class PatientController {
 
     @Autowired
-    private PatientRepository patientRepository;
+    private PatientService patientService;
 
     @GetMapping
     public List<Patient> getAll() {
-        return patientRepository.findAll();
+        return patientService.getAll();
     }
 
     @GetMapping("/{id}")
     public Optional<Patient> getById(@PathVariable Long id) {
-        return patientRepository.findById(id);
+        return patientService.getById(id);
     }
 
     @PostMapping
     public Patient create(@RequestBody Patient patient) {
-        return patientRepository.save(patient);
+        return patientService.create(patient);
     }
 
     @PutMapping("/{id}")
     public Patient update(@PathVariable Long id, @RequestBody Patient patient) {
-        patient.setId(id);
-        return patientRepository.save(patient);
+        return patientService.update(id, patient);
     }
 
     @DeleteMapping("/{id}")
     public void deleteById(@PathVariable Long id) {
-        patientRepository.deleteById(id);
+        patientService.deleteById(id);
     }
 
     @DeleteMapping
     public void deleteAll() {
-        patientRepository.deleteAll();
+        patientService.deleteAll();
     }
 }
