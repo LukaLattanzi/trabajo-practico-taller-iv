@@ -37,12 +37,10 @@ public class Hospital {
         })
         private Phone phone;
 
-        // Composición: Hospital tiene muchos departamentos
         @OneToMany(mappedBy = "hospital", cascade = CascadeType.ALL, orphanRemoval = true)
         @Builder.Default
         private Set<Department> departments = new HashSet<>();
 
-        // Relación inversa desde Patient
         @OneToMany(mappedBy = "hospital")
         @Builder.Default
         private Set<Patient> patients = new HashSet<>();

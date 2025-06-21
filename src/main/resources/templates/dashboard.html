@@ -84,6 +84,108 @@
                     </tbody>
                 </table>
             </div>
+            <div class="col-md-6 mb-4">
+                <h2>Staff Education</h2>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Staff ID</th>
+                            <th>Education</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="se : ${staffEducation}">
+                            <td th:text="${se[0]}"></td>
+                            <td th:text="${se[1]}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6 mb-4">
+                <h2>Staff Certification</h2>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Staff ID</th>
+                            <th>Certification</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="sc : ${staffCertification}">
+                            <td th:text="${sc[0]}"></td>
+                            <td th:text="${sc[1]}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6 mb-4">
+                <h2>Staff Languages</h2>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Staff ID</th>
+                            <th>Language</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="sl : ${staffLanguages}">
+                            <td th:text="${sl[0]}"></td>
+                            <td th:text="${sl[1]}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6 mb-4">
+                <h2>Patient Prescriptions</h2>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Patient ID</th>
+                            <th>Prescription</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="pp : ${patientPrescriptions}">
+                            <td th:text="${pp[0]}"></td>
+                            <td th:text="${pp[1]}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6 mb-4">
+                <h2>Patient Allergies</h2>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Patient ID</th>
+                            <th>Allergy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="pa : ${patientAllergies}">
+                            <td th:text="${pa[0]}"></td>
+                            <td th:text="${pa[1]}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6 mb-4">
+                <h2>Patient Special Requirements</h2>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Patient ID</th>
+                            <th>Special Requirement</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="psr : ${patientSpecialReqs}">
+                            <td th:text="${psr[0]}"></td>
+                            <td th:text="${psr[1]}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </body>

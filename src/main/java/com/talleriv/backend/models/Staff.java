@@ -16,7 +16,7 @@ import java.util.List;
 @PrimaryKeyJoinColumn(name = "person_id")
 public class Staff extends Person {
 
-    private LocalDate joined; // fecha de incorporación
+    private LocalDate joined;
 
     @ElementCollection
     @CollectionTable(name = "staff_education", joinColumns = @JoinColumn(name = "staff_id"))
@@ -33,7 +33,6 @@ public class Staff extends Person {
     @Column(name = "language")
     private List<String> languages;
 
-    // Relación con Department: cada staff trabaja en un departamento
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "department_id")
     private Department department;

@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @Embeddable
 public class Phone {
-    private String countryCode; // ej. "+54"
-    private String number; // ej. "123456789"
-    private String extension; // opcional, puede quedar nulo
+    private String countryCode;
+    private String number;
+    private String extension;
 }

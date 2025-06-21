@@ -20,7 +20,7 @@ public abstract class Person {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String title; // ej. "Sr.", "Sra.", "Dr.", etc.
+    private String title;
 
     private String firstName;
     private String lastName;
@@ -40,5 +40,5 @@ public abstract class Person {
     })
     private Address homeAddress;
 
-    private String phone; // telefono libre como String
+    private String phone;
 }

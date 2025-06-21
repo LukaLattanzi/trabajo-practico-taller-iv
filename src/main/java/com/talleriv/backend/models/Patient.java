@@ -13,12 +13,12 @@ import java.util.List;
 @SuperBuilder
 @Entity
 @Table(name = "patients")
-@PrimaryKeyJoinColumn(name = "person_id") // FK a persons.id
+@PrimaryKeyJoinColumn(name = "person_id")
 public class Patient extends Person {
 
-    private Integer age; // aunque se podría derivar de birthDate, lo incluimos según UML
+    private Integer age;
 
-    private LocalDate accepted; // fecha de aceptación/ingreso
+    private LocalDate accepted;
 
     @ElementCollection
     @CollectionTable(name = "patient_prescriptions", joinColumns = @JoinColumn(name = "patient_id"))
@@ -35,7 +35,6 @@ public class Patient extends Person {
     @Column(name = "special_req")
     private List<String> specialReqs;
 
-    // Relación con Hospital (opcional según interpretación):
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "hospital_id")
     private Hospital hospital;
